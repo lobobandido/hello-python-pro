@@ -1,0 +1,58 @@
+[project]
+name = "hello-python-pro"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "lobobandido",email = "98436859+lobobandido@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.121.0,<0.122.0)",
+    "uvicorn (>=0.38.0,<0.39.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
+
+[tool.poetry]
+packages = [{include = "hello_python_pro", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=8.4.2,<9.0.0)",
+    "black (>=25.9.0,<26.0.0)",
+    "isort (>=7.0.0,<8.0.0)",
+    "ruff (>=0.14.4,<0.15.0)",
+    "pre-commit (>=4.3.0,<5.0.0)",
+    "mypy (>=1.18.2,<2.0.0)"
+]
+[tool.black]
+line-length = 88
+target-version = ['py311', 'py312', 'py313']
+skip-string-normalization = false
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]  # Ignorar longitud de línea (ya lo maneja Black)
+fix = true
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+strict = true
+warn_unused_ignores = true
+warn_return_any = true
+disallow_untyped_defs = true
+
