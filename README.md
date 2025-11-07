@@ -14,5 +14,5 @@ Pequeño proyecto de inicio con **FastAPI** y **Poetry**, creado como base para 
 
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/tu_usuario/hello-python-pro.git
+git clone https://github.com/lobobandido/hello-python-pro
 cd hello-python-pro
