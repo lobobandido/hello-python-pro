@@ -1,8 +1,18 @@
 from fastapi import FastAPI
-from typing import Dict
+
+from app.db import create_db_and_tables
+from app.routes.users import router as users_router
 
 app = FastAPI(title="Hello Python Pro")
 
-@app.get("/", response_model=Dict[str, str])
-def read_root() -> Dict[str, str]:
+app.include_router(users_router)
+
+
+@app.on_event("startup")  # type: ignore[misc]
+def on_startup() -> None:
+    create_db_and_tables()
+
+
+@app.get("/")  # type: ignore[misc]
+def read_root() -> dict[str, str]:
     return {"message": "Hola, mundo desde FastAPI! vamos por todo"}
