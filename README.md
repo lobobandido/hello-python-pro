@@ -1,6 +1,6 @@
 # 🚀 Hello Python Pro
 
-Pequeño proyecto de inicio con **FastAPI** y **Poetry**, creado como base para el roadmap de desarrollo Python Backend.
+Pequeño proyecto de inicio con **FastAPI** y **Poetry**, creado como base para aplicar buenas prácticas de desarrollo Python Backend.
 
 ## 🧠 Tecnologías usadas
 - Python 3.13
