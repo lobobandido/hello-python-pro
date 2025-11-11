@@ -1,18 +1,28 @@
-# 🚀 Hello Python Pro
+# Hello Python Pro
 
-Pequeño proyecto de inicio con **FastAPI** y **Poetry**, creado como base para aplicar buenas prácticas de desarrollo Python Backend.
+**Proyecto:** API ejemplo con FastAPI + SQLModel (SQLite)  
+**Propósito:** Repositorio para practicar backend Python, CRUD, CI, tests y buenas prácticas.  
+**Autor:** Adolfo Antonio (lobobandido)
 
-## 🧠 Tecnologías usadas
-- Python 3.13
-- FastAPI
-- Uvicorn
-- Poetry
-- Pytest
-- Pre-commit (Black, Ruff, Mypy)
+---
 
-## ⚙️ Instalación y uso
+## Estado
+- FastAPI + Uvicorn
+- SQLModel (SQLite)
+- Pre-commit (black, isort, ruff, mypy)
+- Tests con `pytest`
+- Estructura modular (app/core, app/db, app/models, app/schemas, app/routes, app/crud)
 
-### 1️⃣ Clonar el repositorio
+---
+
+## Requisitos locales
+- Python 3.11+ instalado
+- Poetry instalado
+
+---
+
+## Instalación (local)
 ```bash
-git clone https://github.com/lobobandido/hello-python-pro
 cd hello-python-pro
+poetry install
+cp .env.example .env   # editar si es necesario
