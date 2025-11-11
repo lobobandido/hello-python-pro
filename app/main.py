@@ -5,14 +5,15 @@ from app.routes.users import router as users_router
 
 app = FastAPI(title="Hello Python Pro")
 
-app.include_router(users_router)
 
-
-@app.on_event("startup")  # type: ignore[misc]
+@app.on_event("startup")
 def on_startup() -> None:
     create_db_and_tables()
 
 
-@app.get("/")  # type: ignore[misc]
+app.include_router(users_router)
+
+
+@app.get("/")
 def read_root() -> dict[str, str]:
     return {"message": "Hola, mundo desde FastAPI! vamos por todo"}

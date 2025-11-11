@@ -1,15 +1,21 @@
+from typing import Generator
+
 from sqlmodel import Session, SQLModel, create_engine
 
-sqlite_file_name = "database.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
+from app.core.config import settings
 
-engine = create_engine(sqlite_url, echo=True)
+engine = create_engine(
+    settings.database_url,
+    connect_args=(
+        {"check_same_thread": False} if "sqlite" in settings.database_url else {}
+    ),
+)
 
 
 def create_db_and_tables() -> None:
     SQLModel.metadata.create_all(engine)
 
 
-def get_session() -> Session:
+def get_session() -> Generator[Session, None, None]:
     with Session(engine) as session:
         yield session
